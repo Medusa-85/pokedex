@@ -1,34 +1,15 @@
 import { Grid } from "@mui/material";
 import { Container } from "@mui/system";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import {useNavigate} from "react-router-dom"
+import React, { useContext, useEffect, useState } from "react";
 import Header from "../../Components/Header/Header.js";
 import PokeCard from "../../Components/PokemonCard/PokemonCard.js";
-import ButtonP from "../../Components/Button.js";
+import { PokemonContext } from "../../Contexts/PokemonContext.js";
 
 
 export default function PokeList() {
-    const [novaHome, setNovaHome] = useState()
-
-    const navigate = useNavigate()
-
-    const [pokemons, setPokemons] = useState([])
-
-    useEffect(()=>{
-        getPokemons()
-    }, [])
-
-    const getPokemons = () => {
-        let endpoints = []
-        for (let i=1; i<=50; i++) {
-            endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`)
-        }
-
-        axios.all(endpoints.map((endpoint)=> axios.get(endpoint))).then((res) => setPokemons(res))
-    }
-
     
+    const context = useContext(PokemonContext)
+    const {pokemons, pokedex, setPokedex, setPokemons} = context
 
 
     return(
@@ -36,12 +17,17 @@ export default function PokeList() {
             <Header/>
             <Container maxWidth="false" >
                 <Grid container spacing={3}>
-                    {pokemons.map((pokemon, key) => (
-                    <Grid item xs={3} key={key}> 
+                    {pokemons.map((pokemon) => (
+                    <Grid item xs={3} key={pokemon.data.name}> 
                         <PokeCard 
                         name={pokemon.data.name} 
                         image={pokemon.data.sprites.other['official-artwork'].front_default}
                         id={pokemon.data.id}
+                        types={pokemon.data.types} 
+                        pokedex={pokedex}
+                        setPokedex={setPokedex}
+                        pokemons={pokemons}
+                        setPokemons={setPokemons}
                         /> 
                     </Grid>
                     ))}
@@ -53,4 +39,5 @@ export default function PokeList() {
     )
 }
 
-// image={pokemon.data.sprites.other.official-artwork.front_default}
+
+

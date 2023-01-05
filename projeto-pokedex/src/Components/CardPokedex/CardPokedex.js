@@ -6,10 +6,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { goToDetailPage } from '../../Routes/Coordinator';
-import Types from './TypeStack';
+import Types from "../../Components/PokemonCard/TypeStack.js";
 import { CoPresentOutlined } from '@mui/icons-material';
 
-export default function PokeCard(props) {
+export default function CardPokedex(props) {
 
   const navigate = useNavigate()
   
@@ -17,17 +17,17 @@ export default function PokeCard(props) {
   const UpperCaseFirstLetter = ([ first, ...rest ]) =>
   first === undefined ? '' : first.toUpperCase() + rest.join('')
 
-  const capture = (name) => {
-    const newListPokemon = [...props.pokemons]
+//   const delete = (name) => {
+//     const newListPokemon = [...props.pokemons]
 
-    const verify = newListPokemon.find((pokemon) => pokemon.data.name === name)
-    console.log(verify)
+//     const verify = newListPokemon.find((pokemon) => pokemon.data.name === name)
+//     console.log(verify)
 
-    const newListPokedex = [...props.pokedex , verify]
+//     const newListPokedex = [...props.pokedex , verify]
 
-    props.setPokedex(newListPokedex)
+//     props.setPokedex(newListPokedex)
     
-    }
+//     }
 
   
   
@@ -56,8 +56,8 @@ export default function PokeCard(props) {
         </Button>
       </CardActions>
       <CardActions>
-        <Button onClick={()=>capture(props.name)} size="medium" color="primary" sx={{height: "3em", width: "9em" , backgroundColor: "blue"}}>
-          Capturar
+        <Button size="medium" color="primary" sx={{height: "3em", width: "9em" , backgroundColor: "blue"}}>
+          Excluir
         </Button>
       </CardActions>
     </Card>
