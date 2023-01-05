@@ -6,6 +6,7 @@ export const StyleHeader = styled.section`
     grid-template-columns: 1fr 2fr 1fr;                                                                   
     justify-items: center;                    
     width: 100%;
+    height: 160px
 
     /* Box{
         display: grid;
