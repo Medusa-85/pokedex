@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useContext, useEffect, useState } from "react";
 import Header from "../../Components/Header/Header.js";
+// import PokeCard2 from "../../Components/PokemonCard/PokeCard.js";
 import PokeCard from "../../Components/PokemonCard/PokemonCard.js";
 import { PokemonContext } from "../../Contexts/PokemonContext.js";
 

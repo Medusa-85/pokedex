@@ -18,7 +18,7 @@ export default function Types (props) {
 
   return (
     <div>
-      <Stack direction="row" spacing={2}>
+      <Stack direction="row" spacing="7px">
         {props.types.map((typesP) => {
         return (
             <Item key={typesP.type.name}>{typesP.type.name}</Item>

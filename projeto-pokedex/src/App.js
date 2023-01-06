@@ -10,6 +10,7 @@ function App() {
     const [newHome, setNewHome] = useState([])
     const [pokemons, setPokemons] = useState([])
     const [pokedex, setPokedex] = useState([])
+    const [pokemonDetail, setPokemonDetail] = useState("")
 
     useEffect(()=>{
         getPokemons()
@@ -31,9 +32,9 @@ function App() {
     pokedex: pokedex,
     setPokedex: setPokedex,
     newHome: newHome,
-    setNewHome: setNewHome
-
-
+    setNewHome: setNewHome,
+    pokemonDetail: pokemonDetail,
+    setPokemonDetail: setPokemonDetail
   }
 
   return (

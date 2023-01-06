@@ -21,3 +21,25 @@ export const StyleDetail = styled.section`
     }
 
 `
+
+export const StyleDetailCard = styled.div`
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 613px;
+    margin-left: 40px;
+        
+    div{
+        display: flex;
+        justify-content: center;     
+        align-items: center;
+        border-radius: 8px;
+        width: 282px;
+        height: 282px;
+        background-color: white;
+    }
+    img{
+        width: 70%;
+    } 
+
+`
