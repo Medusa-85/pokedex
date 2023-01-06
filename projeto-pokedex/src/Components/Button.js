@@ -13,7 +13,7 @@ export default function ButtonP() {
         <Button 
         variant="contained" 
         onClick={()=>goToPokedex(navigate)} 
-        sx={{height: "3em", width: "9em" , backgroundColor: "blue"}}
+        sx={{height: "3em", width: "9em" , backgroundColor: "#33A4F5"}}
         >   
           Pokédex     
         </Button>

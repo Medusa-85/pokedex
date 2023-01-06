@@ -1,23 +1,42 @@
-import React from "react";
-import { StyleDetail } from "./DetailStyle";
-import { goToListPage } from "../../Routes/Coordinator";
-import { useNavigate } from "react-router-dom";
-import DetailBox from "./DetailBox"
+import React, { useContext} from "react";
+import { Container, Box } from '@chakra-ui/react'
+import { useNavigate, useParams } from "react-router-dom";
+import Header from "../../Components/Header/Header";
+import { PokemonContext } from "../../Contexts/PokemonContext";
+import DetailCard from "./DetailCard";
 
 
 export default function Detail() {
+
+    const context = useContext(PokemonContext)
+    const {pokemons, pokemonDetail} = context
+
     const navigate = useNavigate()
-    const excluir = () => {
+    const excluir = () => { 
 
     }
 
     return(
         <>
-            <StyleDetail >
-                <button onClick={()=>goToListPage(navigate)}>Todos os Pokémons</button>
-                <button onClick={()=>excluir}>Excluir da Pokédex</button>  
-            </StyleDetail>
-            <DetailBox/>
+            <Header/>
+            <Container maxW='2xl' bg='gray' centerContent>
+                <h1>Detalhes</h1>
+               
+                <DetailCard/>
+            </Container>
+            {/* <Container maxW='2xl' bg='#DDDDDD' centerContent>
+                {pokemons.filter((pokemon)=>(
+                <DetailCard 
+                name={pokemon.data.name}
+                imgFront={pokemon.data.sprites.front_default}
+                imgBack={pokemon.data.sprites.back_default}
+
+                />
+                    
+                ))}
+                
+                
+            </Container> */}
         </>
     )
 }
