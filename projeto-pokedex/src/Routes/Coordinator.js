@@ -11,3 +11,4 @@ export const goToListPage = (navigate) => {
 export const goToDetailPage = (navigate) => {
     navigate("/detalhes")
 }
+

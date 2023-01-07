@@ -3,6 +3,7 @@ import {Router} from "./Routes/Router.js"
 import Header from "./Components/Header/Header.js"
 import { PokemonContext } from "./Contexts/PokemonContext.js"
 import axios from "axios";
+import {Stack, Progress} from '@chakra-ui/react'
 
 
 
@@ -10,11 +11,17 @@ function App() {
     const [newHome, setNewHome] = useState([])
     const [pokemons, setPokemons] = useState([])
     const [pokedex, setPokedex] = useState([])
-    const [pokemonDetail, setPokemonDetail] = useState("")
+    const [pokemonDetail, setPokemonDetail] = useState()
 
     useEffect(()=>{
-        getPokemons()
+      getPokemons()
     }, [])
+
+    useEffect(()=>{
+      if(!pokemonDetail){
+        setPokemonDetail(pokemons[0])
+      }
+    }, [pokemons])
 
     const getPokemons = () => {
         let endpoints = []

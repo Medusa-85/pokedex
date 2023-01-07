@@ -36,10 +36,14 @@ export const StyleDetailCard = styled.div`
         border-radius: 8px;
         width: 282px;
         height: 282px;
-        background-color: white;
+       
     }
     img{
         width: 70%;
     } 
+`
+export const BarBaseStats = styled.span`
+    height: 10px;
+    border-radius: 8px;
 
 `

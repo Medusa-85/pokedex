@@ -7,6 +7,7 @@ import ButtonP from '../Button';
 import { StyleHeader } from './HeaderStyle';
 import { goToPokedex, goToListPage } from '../../Routes/Coordinator';
 import DeleteButton from '../DeleteButton';
+import Typography from '@mui/material/Typography';
 import { StyleDetail } from '../../Pages/DetailPage/DetailStyle';
 import { Stack, Text, Button } from '@chakra-ui/react'
 
@@ -31,13 +32,13 @@ export default function Header() {
   const verifyLocation2 = () => {
     switch (location.pathname) {
       case "/pokedex":
-        return (<button onClick={()=>goToListPage(navigate)}>
-          Home
-        </button>);
+        return (
+          <Typography sx={{color: 'black'}} onClick={()=>goToListPage(navigate)}>Todos os Pokemons</Typography>
+        );
       case "/detalhes":
         return (
           <>
-          <ButtonP as='u' onClick={()=>goToListPage(navigate)} >Todos os Pokémons</ButtonP>
+          <Typography sx={{color: 'black'}} onClick={()=>goToListPage(navigate)}>Todos os Pokemons</Typography>
           </>
         ); 
         default: 

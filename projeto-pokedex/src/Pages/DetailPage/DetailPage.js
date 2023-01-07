@@ -19,24 +19,13 @@ export default function Detail() {
     return(
         <>
             <Header/>
+            
             <Container maxW='2xl' bg='gray' centerContent>
                 <h1>Detalhes</h1>
                
                 <DetailCard/>
             </Container>
-            {/* <Container maxW='2xl' bg='#DDDDDD' centerContent>
-                {pokemons.filter((pokemon)=>(
-                <DetailCard 
-                name={pokemon.data.name}
-                imgFront={pokemon.data.sprites.front_default}
-                imgBack={pokemon.data.sprites.back_default}
-
-                />
-                    
-                ))}
-                
-                
-            </Container> */}
+            
         </>
     )
 }

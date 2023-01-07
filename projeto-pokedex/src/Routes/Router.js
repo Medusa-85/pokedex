@@ -5,6 +5,7 @@ import PokeList from "../Pages/ListPage/ListPage.js"
 import Error from "../Pages/ErrorPage.js"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import ButtonP from "../Components/Button.js"
+import ProgressBar from "../Components/progressBarPage.js"
 
 export const Router = () => {
     return (
@@ -14,6 +15,7 @@ export const Router = () => {
                 <Route path="pokedex" element={<Pokedex/>}/>
                 <Route path="detalhes" element={<Detail/>}/>
                 <Route path="*" element={<Error/>}/>
+                {/* <Route path="/bar" element={<ProgressBar/>}/> */}
             </Routes>
         </BrowserRouter> 
 
