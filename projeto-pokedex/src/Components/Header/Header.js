@@ -38,7 +38,7 @@ export default function Header() {
       case "/detalhes":
         return (
           <>
-          <Typography sx={{color: 'black'}} onClick={()=>goToListPage(navigate)}>Todos os Pokemons</Typography>
+          <Typography sx={{color: 'black', textAlign: 'center'}} onClick={()=>goToListPage(navigate)}>Todos os Pokemons</Typography>
           </>
         ); 
         default: 
